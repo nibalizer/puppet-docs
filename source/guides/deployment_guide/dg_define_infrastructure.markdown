@@ -42,14 +42,14 @@ Poor Judy. As we know, the infrastructure of the marketing department is an oddb
 1. An Ubuntu box named "web01" that runs Apache to serve up NCC's main website
 2. An old RHEL 5 FTP server named "ftp01" that provides NCC's employees with access to marketing materials
 3. A Debian server, "crm01", running customer relationship software, SugarCRM
-4. A Windows database server, "sql01", running an SQL db containing customer info.
+4. A Windows database server, "sql01", running an MS-SQL db containing customer contact info.
 
-In addition, there is also the puppet master server, a RHEL box named "puppet."
+In addition, there is also the puppet master server, a RHEL box named "puppetmaster01."
 
-Fortunately for Judy, the [Puppet Forge](http://forge.puppetlabs.com) has modules that will run three of the four machines. For the fourth, the SugarCRM box (crm01.marketing), Judy decides she will write her own module.
+Fortunately for Judy, the [Puppet Forge](http://forge.puppetlabs.com) has modules that will run three of the four machines. For the fourth, the SugarCRM box (crm01.marketing), Judy decides she will write her own module, which we cover in the next chapter [TODO link].
 
 > *Note:* In case you're not familiar with modules, they are self-contained bundles of code and data that use Puppet to express a model for a given piece of infrastructure and interact with the puppet master to build your desired configuration state. A module consists of simple structures of folders and files that deliver manifests and extensions, like custom types or custom facts.) To learn more about the Puppet Forge and the module download and installation process, visit the [installing modules page](/puppet/3/reference/modules_installing.html).
-*Important:* As of PE 2.8, the Puppet module tool is not compatible with Windows nodes, although modules themselves can be readily applied to Windows systems. In a typical Puppet environment, it is unlikely that a module would need to be installed directly on a Windows agent. However, if you encounter a corner case where installing a module directly on a Windows agent is unavoidable, you can do so by downloading tarballs. You may also need to go the tarball route to get Forge modules if local firewall rules prevent access to the Forge.
+*Note:*  In a typical Puppet environment, it is unlikely that a module would need to be installed directly on a Windows agent, but you can use the module tool from the windows Command Prompt if need be. In addition, if local firewall rules or company policies prevent you from downloading using the module tool, you can get a zipped tar-ball from the module's Forge page.
 
 #### Thing One: NTP
 
